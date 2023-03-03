@@ -1,0 +1,320 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,500&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    background-image: url(images/bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+#container {
+    height: auto;
+    width: auto;
+    box-shadow: 2px 2px 3px rgba(253, 4, 4, 0.15), -2px -2px 3px rgb(0 0 0);
+    padding: 6px;
+    border-radius: 0px 0px;
+}
+
+#start {
+    height: 70px;
+    width: 250px;
+    text-align: center;
+    padding: 20px 0;
+    background: linear-gradient(#29001dc0, #4913c9);
+    color: #fdfdff;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: px 0px;
+    border: 1px solid #000000;
+    cursor: pointer;
+}
+
+#start:hover {
+    box-shadow: inset 3px 3px 5px rgb(255, 0, 0), inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+#guide,
+#quiz {
+    height: auto;
+    width: 850px;
+    padding: 40px;
+    background: linear-gradient(#ff9A9e, #feceef);
+    border-radius: 10px 10px;
+    box-shadow: inset 2px 2px 3px rgb(255 255 255 / 15%), inset -2px -2px 3px rgb(0 0 0);
+    display: none;
+}
+
+#guide h2 {
+    font-size: 50px;
+    color: #000000;
+    margin: 2px 0;
+}
+
+#guide h4 {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+#guide #button {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 5px 0;
+}
+
+#guide #button button {
+    height: 50px;
+    width: 120px;
+    margin: 10px 25px;
+    border: none;
+    outline: none;
+    color: #ffffff;
+    background: linear-gradient(#ff01b3c0, #29001d);
+    border: 1px solid #ffffff;
+    border-radius: 10px 10px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#guide #button button:last-child {
+    margin: 10px 10px;
+}
+
+#guide #button button:hover {
+    box-shadow: inset 3px 3px 5px rgba(255, 255, 255, 0.5), inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#quiz {
+
+    height: 580px;
+    position: relative;
+}
+
+#quiz #quiz_header {
+    height: 30px;
+    width: 100%;
+    background: #ffffff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 10px 0;
+    box-shadow: inset 2px 2px 3px rgb(255 255 255 / 15%), inset -2px -2px 3px rgb(0 0 0);
+}
+
+#quiz #quiz_header h5 {
+    font-size: 25px;
+    margin: 0 350px;
+    color: #000000;
+}
+
+#quiz #quiz_header #timer {
+    height: 35px;
+    width: 200px;
+    background: linear-gradient(red, #ff7300);
+    color: #e7f1fa;
+    border: 1px solid #000000;
+    font-size: 18px;
+    border-radius: 0px 10px;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    right: 10px;
+}
+
+#quiz #quiz_header #timer h6 {
+    font-size: 20px;
+    display: grid;
+    place-items: center;
+    color: #29001d;
+    margin: 10px 10px;
+}
+
+#quiz #quiz_header #timer #time {
+    height: 30px;
+    width: 40px;
+    background: #0b0b0b;
+    color: #ffffff;
+    border-radius: 2px 2px;
+    margin: 2px 0 0 27px;
+}
+
+
+#quiz #question {
+    position: absolute;
+    top: 70px;
+    display: flex;
+    flex-direction: row;
+}
+
+#quiz #question h2 {
+    font-size: 25px;
+    color: #ffffff;
+}
+
+#quiz #question h2:first-child {
+    margin: 0 10px 0 5px;
+}
+
+
+#quiz #optionList {
+    height: 400px;
+    width: 100%;
+    position: absolute;
+    top: 200px;
+
+}
+
+#quiz #optionList h4 {
+    height: 50px;
+    width: 575px;
+    background: #ffffff;
+    line-height: 50px;
+    margin: 5px 0;
+    border-radius: 7px;
+    padding: 0 20px;
+    font-size: 20px;
+    color: #000000;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+#quiz #optionList h4:hover {
+    background: #fc0404;
+    color: #ffff00;
+    border: 1px solid #f8d201;
+}
+
+#quiz #optionList .correct {
+    background: #060004;
+    color: #0edd0e;
+    border: 1px solid #0edd0e;
+}
+#quiz #optionList .wrong {
+    background: #0b0f1b;
+    color: red;
+    border: 1px solid red;
+}
+
+
+#quiz #optionList .disabled {
+    pointer-events: none;
+}
+
+
+
+#quiz #answersSection {
+    height: 60px;
+    width: 100%;
+    background: #29001d;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 30px 0;
+    box-shadow: inset 2px 2px 3px rgb(255 255 255 / 15%), inset -2px -2px 3px rgb(0 0 0);
+}
+
+#quiz #answersSection h3 {
+    margin: 0px 30px;
+    color: #ffffffca;
+}
+
+#quiz #answersSection h3:last-child {
+    height: 40px;
+    width: 100px;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(red, rgb(255, 149, 0));
+    position: absolute;
+    right: 0;
+    color: #fff;
+    border: 1px solid #f3d031;
+    font-size: 18px;
+    border-radius: 10px 0px;
+    cursor: pointer;
+    margin: 0 50px;
+}
+
+#quiz #answersSection h3:hover {
+    box-shadow: inset 3px 3px 5px rgba(255, 255, 255, 0.5), inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#quiz #answersSection h3:first-child:hover {
+    box-shadow: none;
+}
+
+
+#container #result {
+    height: 540px;
+    width: 450px;
+    padding: 20px;
+    background: #ff00b3;
+    border-radius: 20px 10px;
+    overflow: hidden;
+    position: relative;
+    display: none;
+    box-shadow: inset 2px 2px 3px rgb(255, 255, 255), inset -2px -2px 3px rgb(0 0 0);
+}
+
+#container #result i {
+    font-size: 180px;
+    color: #f3d031;
+    position: absolute;
+    top: 30px;
+    left: 120px;
+}
+
+#container #result h6 {
+    height: 30px;
+    width: 87%;
+    font-size: 25px;
+    position: absolute;
+    text-align: center;
+    top: 200px;
+    color: #ffffffca;
+}
+
+#container #result #points {
+    font-size: 30px;
+    top: 215px;
+}
+
+#container #result button {
+    height: 50px;
+    width: 180px;
+    border: none;
+    outline: none;
+    background: linear-gradient(red, #f8d201);
+    color: #000000;
+    position: absolute;
+    left: 140px;
+    top: 360px;
+    border: 1px solid #f3d031;
+    border-radius: 0px 15px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+#container #result button:last-child {
+    top: 420px;
+}
+
+#container #result button:hover {
+    box-shadow: inset 3px 3px 5px rgb(255, 255, 255), inset -2px -2px 5px rgba(0, 0, 0, 0.3);
+}
